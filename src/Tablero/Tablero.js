@@ -7,7 +7,8 @@ class Tablero extends Component {
         return (
             <div className="tablero">
             {
-                this.props.baraja.map((carta => <Carta icono={carta.icono}/>))
+                this.props.baraja
+                .map((carta => <Carta icono={carta.icono}/>))
             }
             </div>
         );

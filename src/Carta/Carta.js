@@ -10,9 +10,9 @@ class Carta extends Component {
             <div className="carta">
              <Flipcard>
                     <div className="portada"></div>
-                    <div className="contenido"></div>
+                    <div className="contenido">
                     <i className={`fa ${this.props.icono} fa-5x`}></i>
-            
+                    </div>
                 </Flipcard>
             </div>
         );
