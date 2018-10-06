@@ -6,10 +6,19 @@ class Tablero extends Component {
     render() {
         return (
             <div className="tablero">
-            {
-                this.props.baraja
-                .map((carta => <Carta icono={carta.icono}/>))
-            }
+                {
+                    this.props.baraja
+                        .map((carta, index) => {
+                            const estaSiendoComparada = this.props.parejaSeleccionada.indexOf(carta) > -1;
+                            return <Carta
+                                hey={index}
+                                icono={carta.icono}
+                                estaSiendoComparada={estaSiendoComparada}
+                                seleccionarCarta={() =>this.props.seleccionarCarta(carta)}
+                                guessLetter={carta.guessLetter}
+                            />
+                        })
+                }
             </div>
         );
     }

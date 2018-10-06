@@ -7,8 +7,11 @@ import '../Carta/Carta.css';
 class Carta extends Component {
     render() {
         return (
-            <div className="carta">
-             <Flipcard>
+            <div className="carta" onClick={this.props.seleccionarCarta}>
+             <Flipcard
+             flipped={this.props.estaSiendoComparada || this.props.guessLetter}
+             disabled={true}
+             >
                     <div className="portada"></div>
                     <div className="contenido">
                     <i className={`fa ${this.props.icono} fa-5x`}></i>
