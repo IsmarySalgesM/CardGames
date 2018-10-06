@@ -1,5 +1,23 @@
 .carta{
     width: 125px;
     height: 125px;
-    background-color: orange;
+}
+
+.portada{
+    width: 125px;
+    height: 125px;
+    background-color: brown;
+}
+.contenido{
+    width: 125px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.FlexyFlipCard{
+    height: 100%;
+    width: 100%;
 }
