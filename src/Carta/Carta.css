@@ -1,0 +1,23 @@
+.carta{
+    width: 125px;
+    height: 125px;
+}
+
+.portada{
+    width: 125px;
+    height: 125px;
+    background-color: brown;
+}
+.contenido{
+    width: 125px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.Flipcard{
+    height: 100%;
+    width: 100%;
+}
