@@ -1,7 +1,7 @@
 import shuffle from 'lodash.shuffle';
 import FontAwseme from './FontAwseme';
 
-const numCart = 10;
+const numCart = 8;
 
 
 export default () =>{

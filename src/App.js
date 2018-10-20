@@ -19,22 +19,6 @@ class App extends Component {
     this.state = getEstadoInicial();
   }
 
-  render() {
-    return (
-      <div className="App">
-        <Header 
-        numeroDeIntentos={this.state.numeroDeIntentos}
-        resetearPartida={()=> this.resetearPartida()}
-        />
-        <Tablero
-          baraja={this.state.baraja}
-          parejaSeleccionada={this.state.parejaSeleccionada}
-          seleccionarCarta={(carta) => this.seleccionarCarta(carta)}
-        />
-      </div>
-    );
-  }
-
   seleccionarCarta(carta) {
     if (
       this.state.estaComparando ||
@@ -74,7 +58,7 @@ class App extends Component {
          estaComparando:false,
          numeroDeIntentos:this.state.numeroDeIntentos + 1
        })
-    }, 1000)
+    }, 1500)
    }
   verificarSiHayGanador(baraja){
     if(
@@ -84,8 +68,27 @@ class App extends Component {
   }
 }
  resetearPartida(){
-   this.setState( getEstadoInicial());
+   this.setState
+   (getEstadoInicial());
  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header 
+        numeroDeIntentos={this.state.numeroDeIntentos}
+        resetearPartida={()=> this.resetearPartida()}
+        />
+        <Tablero
+          baraja={this.state.baraja}
+          parejaSeleccionada={this.state.parejaSeleccionada}
+          seleccionarCarta={(carta) => this.seleccionarCarta(carta)}
+        />
+      </div>
+    );
+  }
+
+ 
  
 }
 export default App;

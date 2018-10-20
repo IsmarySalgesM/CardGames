@@ -1,24 +1,40 @@
 
 .carta{
-    width: 125px;
-    height: 125px;
+    width: 200px;
+    height: 200px;
 }
 
 .portada{
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 200px;
     background-color: brown;
 }
 .contenido{
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: aqua;
 }
 
-.Flipcard{
+.ReactFlipcard{
     height: 100%;
     width: 100%;
 }
+
+
+@media (max-width: 700px) {
+    .portada {
+      width: 90px;
+      height: 120px;
+    }
+    .contenido {
+      width: 90px;
+      height: 120px;
+    }
+    .carta {
+      width: 130px;
+      height: 130px;
+    }
+  }
