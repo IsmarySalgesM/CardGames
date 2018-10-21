@@ -7,7 +7,7 @@ class Header extends Component {
             <header>
                 <div className="titulo"><h2>Juego de Memoria</h2></div>
                 <div>
-                    <button className="btn-reiniciar" onClick={this.props.resetearPartida}>Reiniciar Partida</button>
+                    <button className="btn-reiniciar" onClick={this.props.resetGame}>Reiniciar Partida</button>
                 </div>
             </header>
         );

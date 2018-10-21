@@ -4,83 +4,83 @@ import Tablero from './Tablero/Tablero.js'
 import Barajas from './utils/Barajas.js'
 import './App.css';
 
-const getEstadoInicial = () => {
-  const baraja = Barajas();
+const getStateInitial = () => {
+  const deckCards = Barajas();
   return {
-    baraja,
-    parejaSeleccionada: [],
-    estaComparando: false,
-    numeroDeIntentos: 0
+    deckCards,
+    selectedCouple: [],
+    comparing: false,
+    numberOfAttemps: 0
   };
 }
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = getEstadoInicial();
+    this.state = getStateInitial();
   }
 
-  seleccionarCarta(carta) {
+  selectCard(card) {
     if (
-      this.state.estaComparando ||
-      this.state.parejaSeleccionada.indexOf(carta) > -1 ||
-      carta.guessLetter
+      this.state.comparing ||
+      this.state.selectedCouple.indexOf(card) > -1 ||
+      card.guessLetter
     ) {
       return;
 
     }
-    const parejaSeleccionada = [...this.state.parejaSeleccionada, carta];
+    const selectedCouple = [...this.state.selectedCouple, card];
     this.setState({
-      parejaSeleccionada
+      selectedCouple
     });
-    if (parejaSeleccionada.length === 2) {
-       this.compararParejas(parejaSeleccionada);
+    if (selectedCouple.length === 2) {
+       this.comparingCouple(selectedCouple);
     }
   }
-   compararParejas(parejaSeleccionada) {
-     this.setState({ estaComparando: true });
+   comparingCouple(selectedCouple) {
+     this.setState({ comparing: true });
 
      setTimeout(() => {
-       const [primeraCarta, segundaCarta] = parejaSeleccionada;
-      let baraja = this.state.baraja;
+       const [firstCard, secondCard] = selectedCouple;
+      let deckCards = this.state.deckCards;
 
-       if(primeraCarta.icono === segundaCarta.icono){
-         baraja = baraja.map((carta) =>{
-           if(carta.icono !== primeraCarta.icono){
-             return carta;
+       if(firstCard.icono === secondCard.icono){
+         deckCards = deckCards.map((card) =>{
+           if(card.icono !== firstCard.icono){
+             return card;
            }
-           return {...carta, guessLetter: true};
+           return {...card, guessLetter: true};
          })
        }
-       this.verificarSiHayGanador(baraja);
+       this.checkWinner(deckCards);
        this.setState({
-         parejaSeleccionada:[],
-         baraja,
-         estaComparando:false,
-         numeroDeIntentos:this.state.numeroDeIntentos + 1
+         selectedCouple:[],
+         deckCards,
+         comparing:false,
+         numberOfAttemps:this.state.numberOfAttemps + 1
        })
     }, 1500)
    }
-  verificarSiHayGanador(baraja){
+  checkWinner(deckCards){
     if(
-      baraja.filter((carta) => !carta.guessLetter).length === 0
+      deckCards.filter((card) => !card.guessLetter).length === 0
       ){
-      alert(`Genial ganaste en ${this.state.numeroDeIntentos} intentos !!! `)
+      alert(`Genial ganaste en ${this.state.numberOfAttemps} intentos !!! `)
   }
 }
- resetearPartida(){
+ resetGame(){
    this.setState
-   (getEstadoInicial());
+   (getStateInitial());
  }
 
   render() {
     return (
       <div className="App">
-        <Header  numeroDeIntentos={this.state.numeroDeIntentos}
-        resetearPartida={()=> this.resetearPartida()}/>
+        <Header  numberOfAttemps={this.state.numberOfAttemps}
+        resetGame={()=> this.resetGame()}/>
         <Tablero
-          baraja={this.state.baraja}
-          parejaSeleccionada={this.state.parejaSeleccionada}
-          seleccionarCarta={(carta) => this.seleccionarCarta(carta)}
+          deckCards={this.state.deckCards}
+          selectedCouple={this.state.selectedCouple}
+          selectCard={(card) => this.selectCard(card)}
         />
        
       </div>
