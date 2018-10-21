@@ -1,14 +1,12 @@
-
 header{
 height: 50px;
-border: 1px solid black;
 margin-bottom: 10px;
 display:flex;
-justify-content: space-between;
 align-content:center;
 }
 
 .titulo{
+text-align: center;   
 font-size: 25 px;
 padding: 10px;
 color: white;

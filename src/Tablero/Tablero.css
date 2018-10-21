@@ -10,6 +10,6 @@
 .tablero{
 width: 260px;
 height: 100px;
-margin-left: 23%;
+justify-items: center;
 }
 }

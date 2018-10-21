@@ -28,13 +28,16 @@
     .portada {
       width: 90px;
       height: 120px;
+      justify-items: center;
     }
     .contenido {
       width: 90px;
       height: 120px;
+      justify-items: center; 
     }
     .carta {
       width: 130px;
       height: 130px;
+      justify-items: center;
     }
   }
