@@ -64,7 +64,7 @@ class App extends Component {
     if(
       baraja.filter((carta) => !carta.guessLetter).length === 0
       ){
-      alert(`Ganaste en ${this.state.numeroDeIntentos} intentos `)
+      alert(`Genial ganaste en ${this.state.numeroDeIntentos} intentos !!! `)
   }
 }
  resetearPartida(){
@@ -75,15 +75,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header 
-        numeroDeIntentos={this.state.numeroDeIntentos}
-        resetearPartida={()=> this.resetearPartida()}
-        />
+        <Header  numeroDeIntentos={this.state.numeroDeIntentos}
+        resetearPartida={()=> this.resetearPartida()}/>
         <Tablero
           baraja={this.state.baraja}
           parejaSeleccionada={this.state.parejaSeleccionada}
           seleccionarCarta={(carta) => this.seleccionarCarta(carta)}
         />
+       
       </div>
     );
   }

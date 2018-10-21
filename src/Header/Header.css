@@ -1,13 +1,23 @@
-header{
-height: 50px;
-margin-bottom: 10px;
-display:flex;
-align-content:center;
-}
-
 .titulo{
 text-align: center;   
 font-size: 25 px;
-padding: 10px;
-color: white;
+margin-top: 5%;
+}
+
+header{
+height: 50px;    
+margin-bottom: 10px;
+align-content:center;
+}
+
+.intentos{
+padding-left: 03%;
+}
+
+.btn-reiniciar{
+border: 0;    
+position: absolute; 
+left: 03%;
+color:   rgb(126, 7, 3);
+font-family: 'Quicksand', sans-serif;
 }

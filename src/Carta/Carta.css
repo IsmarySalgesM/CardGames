@@ -1,13 +1,13 @@
 
 .carta{
     width: 200px;
-    height: 200px;
+    height: 180px;
 }
 
 .portada{
     width: 150px;
     height: 200px;
-    background-color: brown;
+    background-color: rgb(126, 7, 3);
 }
 .contenido{
     width: 150px;
